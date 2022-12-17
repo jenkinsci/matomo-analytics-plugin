@@ -1,26 +1,20 @@
-# matomo-analytics-plugin
+# Jenkins Matomo analytics plugin
 
 ## Introduction
 
-Matomo anlytics plugin add integration Jenkins pages with Matomo.
+Matomo analytic plugin adds integration to Jenkins web interface pages with Matomo.
 
 ## Getting started
 
-TODO Tell users how to configure your plugin here, include screenshots, pipeline examples and 
-configuration-as-code examples.
+To configure the connection go to Manage Jenkins -> Configure System and fill in the Matomo section fields.
 
 ## Issues
 
-TODO Decide where you're going to host your issues, the default is Jenkins JIRA, but you can also enable GitHub issues,
-If you use GitHub issues there's no need for this section; else add the following line:
-
-Report issues and enhancements in the [Jenkins issue tracker](https://issues.jenkins-ci.org/).
+If you have issues with this plugin feel free to open a GitHub issue at [Matomo-analytics-plugin repository](https://github.com/atai/matomo-analytics-plugin/issues).
 
 ## Contributing
 
-TODO review the default [CONTRIBUTING](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md) file and make sure it is appropriate for your plugin, if not then add your own one adapted from the base file
-
-Refer to our [contribution guidelines](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md)
+All participation is welcome, especially pull requests.
 
 ## LICENSE
 

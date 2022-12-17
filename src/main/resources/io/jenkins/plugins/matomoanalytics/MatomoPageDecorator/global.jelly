@@ -1,0 +1,17 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <f:section title="Matomo Analytics">
+        <f:entry title="${%Matomo Site ID}"  help="/plugin/matomo-analytics/matomositeid.html">
+            <f:textbox field="matomoSiteID"/>
+        </f:entry>
+        <f:entry title="${%Matomo Server}"  help="/plugin/matomo-analytics/matomoserver.html">
+            <f:textbox field="matomoServer"/>
+        </f:entry>
+        <f:entry title="${%Matomo Path}"  help="/plugin/matomo-analytics/matomopath.html">
+            <f:textbox field="matomoPath"/>
+        </f:entry>
+        <f:entry title="${%Use https}" field="matomoUseHttps" help="/plugin/matomo-analytics/matomousehttps.html">
+            <f:checkbox/>
+        </f:entry>
+    </f:section>
+</j:jelly>
