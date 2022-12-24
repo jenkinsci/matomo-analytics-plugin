@@ -7,12 +7,12 @@
         <version>4.52</version>
         <relativePath />
     </parent>
-    <groupId>ru.3www.jenkins.plugins</groupId>
+    <groupId>io.jenkins.plugins</groupId>
     <artifactId>matomo-analytics</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>hpi</packaging>
     <name>Matomo analytics plugin</name>
-    <url>https://github.com/atai/${project.artifactId}-plugin</url>
+    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -26,11 +26,11 @@
         <url>https://github.com/${gitHubRepo}</url>
     </scm>
     <properties>
-        <revision>1.0</revision>
+        <revision>1.0.1</revision>
         <changelist>-SNAPSHOT</changelist>
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
         <jenkins.version>2.361.4</jenkins.version>
-        <gitHubRepo>atai/${project.artifactId}-plugin</gitHubRepo>
+        <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
     </properties>
 
     <dependencyManagement>
