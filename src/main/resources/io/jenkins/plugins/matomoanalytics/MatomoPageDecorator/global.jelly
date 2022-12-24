@@ -10,6 +10,9 @@
         <f:entry title="${%Matomo Path}"  help="/plugin/matomo-analytics/matomopath.html">
             <f:textbox field="matomoPath"/>
         </f:entry>
+        <f:entry title="${%Send user ID}" field="matomoSendUserID" help="/plugin/matomo-analytics/matomousenduserid.html">
+            <f:checkbox/>
+        </f:entry>
         <f:entry title="${%Use https}" field="matomoUseHttps" help="/plugin/matomo-analytics/matomousehttps.html">
             <f:checkbox/>
         </f:entry>

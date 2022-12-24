@@ -14,6 +14,7 @@ public class MatomoPageDecorator extends PageDecorator {
     private String matomoServer;
     private String matomoPath;
     private boolean matomoUseHttps = true;
+    private boolean sendUserID = false;
 
     public MatomoPageDecorator() {
         super();
@@ -24,12 +25,14 @@ public class MatomoPageDecorator extends PageDecorator {
     public MatomoPageDecorator(String matomoSiteID,
                                String matomoServer,
                                String matomoPath,
-                               boolean matomoUseHttps) {
+                               boolean matomoUseHttps,
+                               boolean sendUserID) {
         this();
         setMatomoSiteID(matomoSiteID);
         setMatomoServer(matomoServer);
         setMatomoPath(matomoPath);
         setMatomoUseHttps(matomoUseHttps);
+        setSendUserID(sendUserID);
     }
 
     @Override
@@ -70,6 +73,14 @@ public class MatomoPageDecorator extends PageDecorator {
 
     public void setMatomoUseHttps(boolean matomoUseHttps) {
         this.matomoUseHttps = matomoUseHttps;
+    }
+
+    public boolean isSendUserID() {
+        return sendUserID;
+    }
+
+    public void setSendUserID(boolean sendUserID) {
+        this.sendUserID = sendUserID;
     }
 
     public String getProtocolString() {
