@@ -9,12 +9,10 @@
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 var d = document;
-                if ("${it.sendUserID}") {
+                if (${it.sendUserID}) {
                     var userID, userIDNode, Nodes = d.getElementsByClassName('hidden-xs hidden-sm');
                     if (Nodes !== undefined) {
-                        userIDNode = Nodes[0];
-                        userID = userIDNode.textContent;
-                        _paq.push(['setUserId', userID]);
+                        _paq.push(['setUserId', Nodes[0].textContent]);
                     }
                 }
                 (function () {
