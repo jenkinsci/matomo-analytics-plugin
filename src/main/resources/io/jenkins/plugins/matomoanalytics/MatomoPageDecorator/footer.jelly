@@ -9,7 +9,7 @@
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 var d = document;
-                if (${it.sendUserID}) {
+                if ("${it.matomoSendUserID}") {
                     var userID, userIDNode, Nodes = d.getElementsByClassName('hidden-xs hidden-sm');
                     if (Nodes !== undefined) {
                         _paq.push(['setUserId', Nodes[0].textContent]);
