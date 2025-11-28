@@ -13,6 +13,8 @@ public class MatomoPageDecorator extends PageDecorator {
     private String matomoSiteID;
     private String matomoServer;
     private String matomoPath;
+    private String matomoPhp;
+    private String matomoJs;
     private boolean matomoUseHttps = true;
     private boolean matomoSendUserID = false;
 
@@ -25,12 +27,16 @@ public class MatomoPageDecorator extends PageDecorator {
     public MatomoPageDecorator(String matomoSiteID,
                                String matomoServer,
                                String matomoPath,
+                               String matomoPhp,
+                               String matomoJs,
                                boolean matomoUseHttps,
                                boolean matomoSendUserID) {
         this();
         setMatomoSiteID(matomoSiteID);
         setMatomoServer(matomoServer);
         setMatomoPath(matomoPath);
+        setMatomoPhp(matomoPhp);
+        setMatomoJs(matomoJs);
         setMatomoUseHttps(matomoUseHttps);
         setMatomoSendUserID(matomoSendUserID);
     }
@@ -65,6 +71,22 @@ public class MatomoPageDecorator extends PageDecorator {
 
     public void setMatomoPath(String matomoPath) {
         this.matomoPath = matomoPath;
+    }
+
+    public String getMatomoPhp() {
+        return matomoPhp;
+    }
+
+    public void setMatomoPhp(String matomoPhp) {
+        this.matomoPhp = matomoPhp;
+    }
+
+    public String getMatomoJs() {
+        return matomoJs;
+    }
+
+    public void setMatomoJs(String matomoJs) {
+        this.matomoJs = matomoJs;
     }
 
     public boolean isMatomoUseHttps() {

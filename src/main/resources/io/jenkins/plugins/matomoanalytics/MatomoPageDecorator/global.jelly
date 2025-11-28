@@ -16,5 +16,14 @@
         <f:entry title="${%Use https}" field="matomoUseHttps" help="/plugin/matomo-analytics/matomousehttps.html">
             <f:checkbox/>
         </f:entry>
+        <!-- Advanced section for PHP & JS -->
+        <f:advanced>
+            <f:entry title="${%Matomo PHP file}"  help="/plugin/matomo-analytics/matomophp.html">
+                <f:textbox field="matomoPhp" default="matomo.php"/>
+            </f:entry>
+            <f:entry title="${%Matomo JS file}"  help="/plugin/matomo-analytics/matomojs.html">
+                <f:textbox field="matomoJs" default="matomo.js"/>
+            </f:entry>
+        </f:advanced>
     </f:section>
 </j:jelly>
