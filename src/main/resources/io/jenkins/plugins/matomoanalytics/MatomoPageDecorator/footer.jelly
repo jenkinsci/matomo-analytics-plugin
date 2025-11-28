@@ -5,23 +5,30 @@
             <!-- Matomo -->
             <script>
                 var _paq = window._paq = window._paq || [];
+                _paq.push(["setDomains", [
+                    <j:forEach var="d" items="${instance.domains}">
+                        "${d}"<j:if test="${!d_last}">,</j:if>
+                    </j:forEach>
+                ] ]);
                 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 var d = document;
-                if ("${it.matomoSendUserID}") {
-                    var userID, userIDNode, Nodes = d.getElementsByClassName('hidden-xs hidden-sm');
-                    if (Nodes !== undefined) {
-                        _paq.push(['setUserId', Nodes[0].textContent]);
-                    }
+                if (${it.matomoSendUserID}) {
+                    _paq.push(['setUserId', "${app.authentication.name}".trim()]);
+                } else {
+                    _paq.push(["setDoNotTrack", true]);
                 }
                 (function () {
                     var u = "${it.protocolString}${it.matomoServer}${it.matomoPath}";
-                    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                    var matomoPhp = "${it.matomoPhp ?: 'matomo.php'}";
+                    var matomoJs  = "${it.matomoJs  ?: 'matomo.js'}";
+
+                    _paq.push(['setTrackerUrl', u + matomoPhp]);
                     _paq.push(['setSiteId', ${it.matomoSiteID}]);
                     var g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                     g.async = true;
-                    g.src = u + 'matomo.js';
+                    g.src = u + matomoJs;
                     s.parentNode.insertBefore(g, s);
                 })();
             </script>
