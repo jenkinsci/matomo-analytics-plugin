@@ -30,6 +30,7 @@
         <changelist>999999-SNAPSHOT</changelist>
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
+        <jenkins.version>2.361.4</jenkins.version>
     </properties>
 
     <dependencyManagement>
