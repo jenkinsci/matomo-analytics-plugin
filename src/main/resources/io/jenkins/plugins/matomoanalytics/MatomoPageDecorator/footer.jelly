@@ -3,35 +3,31 @@
     <j:choose>
         <j:when test="${it.matomoSiteID!=null &amp;&amp; it.matomoServer!=null}">
             <!-- Matomo -->
-            <script>
-                var _paq = window._paq = window._paq || [];
-                _paq.push(["setDomains", [
+            <j:set var="userIdValue" value=""/>
+            <j:if test="${it.matomoSendUserID}">
+                <j:set var="userIdValue" value="${app.authentication.name}"/>
+            </j:if>
+            <j:set var="domainsValue" value=""/>
+            <j:if test="${instance.domains != null &amp;&amp; !instance.domains.isEmpty()}">
+                <j:set var="domainsArray">
                     <j:forEach var="d" items="${instance.domains}">
                         "${d}"<j:if test="${!d_last}">,</j:if>
                     </j:forEach>
-                ] ]);
-                /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
-                var d = document;
-                if (${it.matomoSendUserID}) {
-                    _paq.push(['setUserId', "${app.authentication.name}".trim()]);
-                } else {
-                    _paq.push(["setDoNotTrack", true]);
-                }
-                (function () {
-                    var u = "${it.protocolString}${it.matomoServer}${it.matomoPath}";
-                    var matomoPhp = "${it.matomoPhp ?: 'matomo.php'}";
-                    var matomoJs  = "${it.matomoJs  ?: 'matomo.js'}";
-
-                    _paq.push(['setTrackerUrl', u + matomoPhp]);
-                    _paq.push(['setSiteId', ${it.matomoSiteID}]);
-                    var g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                    g.async = true;
-                    g.src = u + matomoJs;
-                    s.parentNode.insertBefore(g, s);
-                })();
-            </script>
+                </j:set>
+                <j:set var="domainsValue" value="[${domainsArray}]"/>
+            </j:if>
+            <div id="matomo-config"
+                 data-matomo-server="${it.matomoServer}"
+                 data-matomo-path="${it.matomoPath ?: ''}"
+                 data-matomo-site-id="${it.matomoSiteID}"
+                 data-matomo-php="${it.matomoPhp ?: 'matomo.php'}"
+                 data-matomo-js="${it.matomoJs ?: 'matomo.js'}"
+                 data-matomo-protocol="${it.protocolString}"
+                 data-matomo-send-user-id="${it.matomoSendUserID}"
+                 data-matomo-user-id="${userIdValue}"
+                 data-matomo-domains="${domainsValue}">
+            </div>
+            <script src="${resURL}/plugin/matomo-analytics/matomo-analytics.js"></script>
             <!-- End Matomo Code -->
         </j:when>
     </j:choose>
