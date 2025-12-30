@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.88</version>
+        <version>5.31</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -30,21 +30,17 @@
         <changelist>999999-SNAPSHOT</changelist>
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
-        <jenkins.version>2.361.4</jenkins.version>
-        <ban-junit4-imports.skip>false</ban-junit4-imports.skip>
+        <jenkins.version>2.539</jenkins.version>
+        <ban-junit4-imports.skip>true</ban-junit4-imports.skip>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.361.x</artifactId>
-                <version>2025.v816d28f1e04f</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>access-modifier-suppressions</artifactId>
+            <version>${access-modifier-checker.version}</version>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>
