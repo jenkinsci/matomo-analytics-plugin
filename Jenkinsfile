@@ -5,6 +5,6 @@
 buildPlugin(
   useContainerAgent: true,
   configurations: [
-    [platform: 'linux', jdk: 17], // use 'docker' if you have containerized tests
-    [platform: 'windows', jdk: 11],
+    [platform: 'linux', jdk: 25],
+    [platform: 'windows', jdk: 21],
 ])
